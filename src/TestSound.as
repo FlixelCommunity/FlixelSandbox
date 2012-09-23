@@ -5,7 +5,10 @@ package
 	public class TestSound extends FlxState
 	{
 		// Credits: http://www.flashkit.com/soundfx/Instruments/Guitar/Oh_Yeah_-Guitar_O-7431/index.php
-		[Embed(source = "../assets/sound.mp3")] private var SoundClass :Class;
+		//[Embed(source = "../assets/sound.mp3")] private var SoundClass :Class;
+		// Credits: The Eagles
+		[Embed(source = "../assets/hotel-california.mp3")] private var SoundClass :Class;
+		// If you liked that one, try also http://www.youtube.com/watch?v=h8dSoL13qpY 
 		
 		private var mSound	:FlxSound;
 		private var mSprite :FlxSprite;
@@ -18,17 +21,16 @@ package
 			
 			mSprite = new FlxSprite();
 			add(mSprite);
-			
-			mSprite.followPath(new FlxPath([new FlxPoint(FlxG.width, 5), new FlxPoint(0, 5)]), 30);
+						
+			mSprite.followPath(new FlxPath([new FlxPoint(FlxG.width, 5), new FlxPoint(0, 5)]), 30, FlxObject.PATH_YOYO);
 			
 			mSound = new FlxSound();
 			mSound.loadEmbedded(SoundClass, true);
 			
-			mSound.x = FlxG.width / 2;
-			mSound.y = 5;
+			var dummySprite:FlxSprite = new FlxSprite(FlxG.width/2, 5);
 			
 			mSound.play();
-			mSound.proximity(mSound.x, mSound.y, mSprite, FlxG.width / 2);
+			mSound.proximity(mSprite.x, mSprite.y, dummySprite, FlxG.width * (1/2));
 			
 			FlxG.mouse.show();
 			add(mSound);
@@ -39,6 +41,9 @@ package
 		override public function update():void
 		{
 			super.update();
+			
+			mSound.x = mSprite.x;
+			mSound.y = mSprite.y;
 			
 			if (FlxG.keys.justPressed("P")) {
 				mSound.pause();
@@ -61,7 +66,7 @@ package
 			}
 			
 			if (FlxG.keys.justPressed("G")) {
-				mSound.fadeOut(2);
+				mSound.fadeOut(2, true);
 			}
 			
 			if (FlxG.keys.justPressed("V")) {
