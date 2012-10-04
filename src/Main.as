@@ -8,7 +8,7 @@ package
 	{
 		
 		public function Main() {
-			super(500, 240, TestSound, 2);
+			super(500, 240, TestFlxGroupUpdate, 2);
 			forceDebugger = true;
 		}
 	}
