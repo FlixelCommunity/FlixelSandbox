@@ -3,12 +3,12 @@ package
 	import org.flixel.FlxG;
 	import org.flixel.FlxGame;
 	
-	[SWF(width="1000", height="480", backgroundColor="#000000")]
+	[SWF(width="800", height="600", backgroundColor="#000000")]
 	public class Main extends FlxGame 
 	{
 		
 		public function Main() {
-			super(500, 240, TestFlxGroupUpdate, 2);
+			super(400, 300, TestTileMap, 2);
 			forceDebugger = true;
 		}
 	}
