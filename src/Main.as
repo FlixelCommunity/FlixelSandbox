@@ -8,7 +8,7 @@ package
 	{
 		
 		public function Main() {
-			super(400, 300, TestTileMap, 2);
+			super(400, 300, TestSound, 2);
 			forceDebugger = true;
 		}
 	}

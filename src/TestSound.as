@@ -4,8 +4,12 @@ package
 
 	public class TestSound extends FlxState
 	{
+		// Credits: http://www.flashkit.com/loops/Easy_Listening/Folk/Acoustic-Jason_Le-5733/index.php
+		[Embed(source = "../assets/Acoustic-Jason_Le-5733_hifi.mp3")] private var LoopingSound :Class;
+		
 		// Credits: http://www.flashkit.com/soundfx/Instruments/Guitar/Oh_Yeah_-Guitar_O-7431/index.php
 		//[Embed(source = "../assets/sound.mp3")] private var SoundClass :Class;
+		
 		// Credits: The Eagles
 		[Embed(source = "../assets/hotel-california.mp3")] private var SoundClass :Class;
 		// If you liked that one, try also http://www.youtube.com/watch?v=h8dSoL13qpY 
@@ -21,11 +25,12 @@ package
 			
 			mSprite = new FlxSprite();
 			add(mSprite);
-						
+			
 			mSprite.followPath(new FlxPath([new FlxPoint(FlxG.width, 5), new FlxPoint(0, 5)]), 30, FlxObject.PATH_YOYO);
 			
 			mSound = new FlxSound();
-			mSound.loadEmbedded(SoundClass, true);
+			//mSound.loadEmbedded(SoundClass, true);
+			mSound.loadEmbedded(LoopingSound, true);
 			
 			var dummySprite:FlxSprite = new FlxSprite(FlxG.width/2, 5);
 			
