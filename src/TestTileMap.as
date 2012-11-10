@@ -84,7 +84,15 @@ package
 		}
 		
 		override public function update():void
-		{				
+		{	
+			if (FlxG.keys.justPressed("O")) {
+				FlxG.camera.zoom += 0.1;
+			}
+			
+			if (FlxG.keys.justPressed("I")) {
+				FlxG.camera.zoom -= 0.1;
+			}
+			
 			// collide everything
 			FlxG.collide();
 
