@@ -35,7 +35,7 @@ package
 			FlxG.log("----- Creating test objects -----");
 			
 			groupAdam = createObjects(FlxGroupAdam, FlxMathstuff, numParents, numChildren, numGenerations);
-			groupKWarp = createObjects(FlxGroupAdam, FlxMathstuff, numParents, numChildren, numGenerations);
+			groupKWarp = createObjects(FlxGroupKWarp, FlxMathstuff, numParents, numChildren, numGenerations);
 			FlxG.log("Created " + FlxGroupWireframe.totalCount/2 + " FlxGroups each.");
 			FlxG.log("Created " + FlxMathstuff.totalCount/2 + " FlxBasic children each.");
 						
