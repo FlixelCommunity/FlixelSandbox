@@ -1,14 +1,23 @@
 package 
 {	
-	import org.flixel.FlxG;
+	import core.FlxTest;
+	import core.SelectTestMenu;
 	import org.flixel.FlxGame;
 	
 	[SWF(width="800", height="600", backgroundColor="#000000")]
 	public class Main extends FlxGame 
 	{
 		
-		public function Main() {
-			super(400, 300, TestFlxSpriteAlpha, 2);
+		public function Main() 
+		{
+			FlxTest.register(TestFlxGroupUpdate);
+			FlxTest.register(TestFlxSpriteAlpha);
+			FlxTest.register(TestFlxGroupSort);
+			FlxTest.register(TestSound);
+			FlxTest.register(TestText);
+			FlxTest.register(TestTileMap);
+			
+			super(400, 300, SelectTestMenu, 2);
 			forceDebugger = true;
 		}
 	}
