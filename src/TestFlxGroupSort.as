@@ -1,5 +1,6 @@
 package  
 {
+	import core.FlxTest;
 	import org.flixel.*;
 
 	/**
@@ -8,7 +9,7 @@ package
 	 * The sort() method has to be able to sort anything, even if that thing does not
 	 * have the specified sorting index (e.g. a group made of FlxSprites and FlxGroups being sorted by "y" property).
 	 */
-	public class TestFlxGroupSort extends FlxState
+	public class TestFlxGroupSort extends FlxTest
 	{
 		public static const MAX_SPRITES :int = 1000;
 		public static const MAX_ITERATIONS_TEST :int = 1000;

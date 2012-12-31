@@ -1,8 +1,9 @@
 package  
 {
+	import core.FlxTest;
 	import org.flixel.*;
 
-	public class TestSound extends FlxState
+	public class TestSound extends FlxTest
 	{
 		// Credits: http://www.flashkit.com/loops/Easy_Listening/Folk/Acoustic-Jason_Le-5733/index.php
 		[Embed(source = "../assets/Acoustic-Jason_Le-5733_hifi.mp3")] private var LoopingSound :Class;
@@ -76,12 +77,12 @@ package
 			
 			if (FlxG.keys.justPressed("V")) {
 				mSound.volume += 0.1;
-				FlxG.log("volume = " + mSound.getActualVolume());
+				log("volume = " + mSound.getActualVolume());
 			}
 			
 			if (FlxG.keys.justPressed("C")) {
 				mSound.volume -= 0.1;
-				FlxG.log("volume = " + mSound.getActualVolume());
+				log("volume = " + mSound.getActualVolume());
 			}
 			
 			if (FlxG.keys.justPressed("Z")) {

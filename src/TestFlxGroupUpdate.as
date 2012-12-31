@@ -1,5 +1,6 @@
 package  
 {
+	import core.FlxTest;
 	import flash.utils.getTimer;
 	import testFlxGroupUpdate.FlxMathstuff;
 	import testFlxGroupUpdate.FlxGroupWireframe;
@@ -7,14 +8,22 @@ package
 	import testFlxGroupUpdate.FlxGroupAdam;
 	import org.flixel.*;
 
-	public class TestFlxGroupUpdate extends FlxState
+	public class TestFlxGroupUpdate extends FlxTest
 	{
 		public function TestFlxGroupUpdate()
 		{
-			super();
+			super(true);
+		}
+		
+		
+		override public function create():void 
+		{
+			super.create();
 			
-			trace("Press 'T' to begin the test.");
-			trace("Remember to open the console so you can see the output.")
+			this.add(new FlxText(40, 40, FlxG.width - 80, "Press 'T' to begin the test."));
+			this.add(new FlxText(40, 80, FlxG.width - 80, "Remember to open the console so you can see the output."));
+						
+			log("Press 'T' to begin the test.");
 		}
 		
 		override public function update():void
@@ -32,14 +41,14 @@ package
 		
 		public function runTest(numParents:uint, numChildren:uint, numGenerations:uint):void
 		{
-			FlxG.log("----- Creating test objects -----");
+			log("----- Creating test objects -----");
 			
 			groupAdam = createObjects(FlxGroupAdam, FlxMathstuff, numParents, numChildren, numGenerations);
 			groupKWarp = createObjects(FlxGroupKWarp, FlxMathstuff, numParents, numChildren, numGenerations);
-			FlxG.log("Created " + FlxGroupWireframe.totalCount/2 + " FlxGroups each.");
-			FlxG.log("Created " + FlxMathstuff.totalCount/2 + " FlxBasic children each.");
+			log("Created", FlxGroupWireframe.totalCount/2, "FlxGroups each.");
+			log("Created", FlxMathstuff.totalCount/2, "FlxBasic children each.");
 						
-			FlxG.log("----- Starting performance test -----");
+			log("----- Starting performance test -----");
 			
 			var time:uint;
 			
@@ -47,15 +56,15 @@ package
 				groupAdam.preUpdate();
 				groupAdam.update();
 				groupAdam.postUpdate();
-			FlxG.log("Adam: " + (getTimer() - time) + " ms.");
+			log("Adam:", (getTimer() - time), "ms.");
 			
 			time = getTimer();
 				groupKWarp.preUpdate();
 				groupKWarp.update();
 				groupKWarp.postUpdate();
-			FlxG.log("KWarp: " + (getTimer() - time) + " ms.");
+			log("KWarp:", (getTimer() - time), "ms.");
 			
-			FlxG.log("----- Test finished -----");
+			log("----- Test finished -----");
 		}
 		
 		private function createObjects(ParentConstructor:Class, ChildConstructor:Class, numParents:uint, numChildren:uint, numGenerations:uint):FlxGroupWireframe

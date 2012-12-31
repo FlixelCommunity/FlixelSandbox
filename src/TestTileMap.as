@@ -1,9 +1,10 @@
 package
 {
+	import core.FlxTest;
 	import org.flixel.*;
 	import org.flixel.system.FlxTile;
 
-	public class TestTileMap extends FlxState
+	public class TestTileMap extends FlxTest
 	{
 		private var level:FlxTilemap;
 		private var player1:FlxSprite;

@@ -1,11 +1,12 @@
 package  
 {
+	import core.FlxTest;
 	import org.flixel.*;
 	
 	/**
 	 * This code tests FlxText and its sometime blurry behavior.
 	 */
-	public class TestText extends FlxState
+	public class TestText extends FlxTest
 	{
 		private var text :FlxText;
 		private var text2 :FlxText;

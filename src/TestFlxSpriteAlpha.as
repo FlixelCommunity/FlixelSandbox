@@ -1,9 +1,10 @@
 package  
 {
+	import core.FlxTest;
 	import org.flixel.*;
 	import testFlxSpriteAlpha.*;
 
-	public class TestFlxSpriteAlpha extends FlxState
+	public class TestFlxSpriteAlpha extends FlxTest
 	{
 		private var mSpriteTest :FlxSprite;
 		private var mSpriteTestBug :SpriteTestBug;
