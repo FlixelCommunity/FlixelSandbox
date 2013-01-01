@@ -19,10 +19,10 @@ package
 			mSpriteTestBug = new SpriteTest(250, 100, true);
 			add(mSpriteTestBug);
 
-			add(new FlxText(100, 155, 50, "Expected"));
-			add(new FlxText(250, 155, 50, "BUG"));
+			add(new FlxText(100, 155, 50, mSpriteTest.name));
+			add(new FlxText(250, 155, 50, mSpriteTestBug.name));
 			
-			var t:FlxText = new FlxText(50, 200, 300, "Both should fade out at the same pace, \nbut the buggy one is way faster. \n\nPress ENTER to begin the fading or to reset the test.");
+			var t:FlxText = new FlxText(50, 200, 300, "Both should fade out at the same pace,\nbut the buggy one is way faster.\n\nPress ENTER to begin the fading or to reset the test.");
 			t.alignment = "center";
 			add(t);
 			
