@@ -79,12 +79,25 @@ package
 			// Tiles 2 and up do not collide.
 			level.setTileProperties(2, FlxObject.NONE, null, null, 3);
 			
+			// Tile 3 DOES NOT collide, but it has a callback that should be invoked everytime an
+			// overlap() if performed.
+			level.setTileProperties(3, FlxObject.NONE, tileCallback);
+			
 			// Make tile 4 collide and call a callback.
 			level.setTileProperties(4, FlxObject.ANY, function(t:FlxTile, o:FlxObject) :void {
-				if (!player1.flickering) {
-					player1.flicker(0.1);
-				}
+				player1.color = 0x00ff00;
 			});
+		}
+		
+		private function tileCallback(t:FlxTile, o:FlxObject) :void {
+			if (!player1.flickering) {
+				player1.flicker(0.1);
+			}
+		}
+		
+		private function overlapCallback(t:FlxTile, o:FlxObject) :Boolean {
+			// Return false to inform no overlap was found.
+			return false;
 		}
 		
 		override public function update():void
@@ -97,16 +110,15 @@ package
 				FlxG.camera.zoom -= 0.1;
 			}
 			
-			// collide everything
+			// Collide everything. Deep within this call Flixel will call level.overlapsWithCallback(), passing as a callback
+			// its own separation method. As a consequence FlxG.collide() will invoke the tile callback at some point,
+			// because FlxTilemap.overlapsWithCallback() invokes the tile callback no matter if an overlap was found or not.
 			FlxG.collide();
 			
-			// This callback is called when the player is overlaping ANY tile
-			// that allows collision.
-			level.overlapsWithCallback(player1, function(t:FlxTile, o:FlxObject) :void {
-				if (!player1.flickering) {
-					player1.flicker(0.1);
-				}
-			});
+			// Check if player1 is overlaping any tile, but using overlapCall() to tell if there is an overlap. It the callback
+			// (overlapCallback() in this case) returns true, than the tile's callback should be invoked, otherwise no tile
+			// callback is invoked.
+			level.overlapsWithCallback(player1, overlapCallback);
 
 			//player 1 controls
 			player1.acceleration.x = 0;
