@@ -16,6 +16,7 @@ package
 			FlxTest.register(TestSound);
 			FlxTest.register(TestText);
 			FlxTest.register(TestTileMap);
+			FlxTest.register(TestAngles);
 			
 			super(400, 300, SelectTestMenu, 2);
 			forceDebugger = true;
