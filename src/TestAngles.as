@@ -1,6 +1,5 @@
 package  
 {
-	import flash.display.BitmapData;
 	import core.FlxTest;
 	import org.flixel.*;
 	
@@ -18,14 +17,14 @@ package
 			add(degreesText);
 			
 			center = new FlxSprite();
-			center.x = (FlxG.width / 2)// - (center.width / 2);
-			center.y = (FlxG.height / 2)// - (center.height / 2);
+			center.x = (FlxG.width / 2);
+			center.y = (FlxG.height / 2);
 			add(center);
 			
 			mover = new FlxSprite();
 			halfMoverSize = mover.width / 2;
-			mover.x = center.x + moverRadius;
-			mover.y = center.y + 0;
+			mover.x = center.x + 0;
+			mover.y = center.y - moverRadius;
 			add(mover);
 			
 			this.r = 0;
@@ -46,22 +45,22 @@ package
 		{
 			var angleChanged:Number = value - _r;
 			
-			//var pt:FlxPoint = new FlxPoint(mover.x+halfMoverSize, mover.y+halfMoverSize);
 			var pt:FlxPoint = rotatePoint(mover.x, mover.y, center.x, center.y, angleChanged, pt);
-			mover.x = pt.x//-halfMoverSize;
-			mover.y = pt.y//-halfMoverSize;
+			mover.x = pt.x;
+			mover.y = pt.y;
 			
 			_r = value;
 			
 			var numDegrees:Number = getAngle(new FlxPoint(center.x, center.y), new FlxPoint(mover.x, mover.y));
-			numDegrees;
-			degreesText.text = "Set to " + _r + " degrees. Guessing at " + numDegrees + " degrees.";
+			degreesText.text = "Set to " + _r + " degrees. `getAngle()` returns " + numDegrees.toFixed(2) + " degrees.";
+			center.angle = numDegrees;
 		}
 		
 		override public function update():void 
 		{
 			super.update();
 			
+			//*
 			if (FlxG.keys.K) {
 				r -= 5;
 			}
@@ -69,6 +68,14 @@ package
 			if (FlxG.keys.L) {
 				r += 5;
 			}
+			/*/
+			if (FlxG.keys.justPressed("K")) {
+				r -= 360;
+			}
+			
+			if (FlxG.keys.justPressed("L")) {
+				r += 360;
+			}//*/
 			
 		}
 		
@@ -133,7 +140,7 @@ package
 			}
 			
 			var dx:Number = X-PivotX;
-			var dy:Number = PivotY-Y;//+Y; //Y axis is inverted in flash, normally this would be a subtract operation
+			var dy:Number = PivotY-Y;
 			if(Point == null)
 				Point = new FlxPoint();
 			Point.x = PivotX + cos*dx - sin*dy;
