@@ -17,6 +17,7 @@ package
 			FlxTest.register(TestText);
 			FlxTest.register(TestTileMap);
 			FlxTest.register(TestAngles);
+			FlxTest.register(TestFlxSpriteDrawLine);
 			
 			super(400, 300, SelectTestMenu, 2);
 			forceDebugger = true;
