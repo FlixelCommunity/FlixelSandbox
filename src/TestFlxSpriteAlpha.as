@@ -15,19 +15,33 @@ package
 		
 		override public function create():void 
 		{
+			FlxG.log("Super");
+
 			super.create();	
+			
+			FlxG.log("Duper");
+			
+			FlxG.log("Alrite Sprite:");	
 			
 			mSpriteTest = new SpriteTest(50, 100, false);
 			add(mSpriteTest);
 			
+			FlxG.log("Bugged Sprite:");			
+			
+			// Woot! This sprite is trying to set the frame number to `1`,
+			//  which produces a warning as expected. :)
 			mSpriteTestBug = new SpriteTest(180, 100, true);
 			add(mSpriteTestBug);
+			
+			FlxG.log("Before creating the animated sprite");
 			
 			mAnimatedSprite = new FlxSprite(310, 90);
 			mAnimatedSprite.loadGraphic(daxbotsheet_0_png, true, false, 64, 68);
 			mAnimatedSprite.addAnimation("walk", [0, 1, 2, 3], 5);
 			mAnimatedSprite.play("walk");
 			add(mAnimatedSprite);
+			
+			FlxG.log(mAnimatedSprite.numFrames + '/' + mAnimatedSprite.maxFrames);
 
 			add(new FlxText(50, 155, 50, mSpriteTest.name));
 			add(new FlxText(180, 155, 50, mSpriteTestBug.name));
