@@ -18,6 +18,7 @@ package
 			FlxTest.register(TestTileMap);
 			FlxTest.register(TestAngles);
 			FlxTest.register(TestFlxSpriteDrawLine);
+			FlxTest.register(TestCameraJitters);
 			
 			super(400, 300, SelectTestMenu, 2);
 			forceDebugger = true;
