@@ -1,6 +1,0 @@
-[submodule "lib"]
-	path = lib
-	url = git://github.com/FlixelCommunity/flixel-release.git
-[submodule "lib-dev"]
-	path = lib-dev
-	url = git://github.com/FlixelCommunity/flixel-release.git
