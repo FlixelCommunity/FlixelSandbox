@@ -1,7 +1,11 @@
 package  
 {
+	import flixel.ui.FlxText;
+	import flixel.util.FlxPoint;
+	import flixel.util.FlxPath;
+	import flixel.system.FlxSound;
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 
 	public class TestSound extends FlxTest
 	{

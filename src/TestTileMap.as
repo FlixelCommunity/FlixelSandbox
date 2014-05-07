@@ -1,9 +1,9 @@
 package
 {
 	import core.FlxTest;
-	import org.flixel.*;
-	import org.flixel.system.FlxTile;
-
+	import flixel.*;
+	import flixel.tile.*;
+	
 	public class TestTileMap extends FlxTest
 	{
 		private var level:FlxTilemap;

@@ -1,9 +1,9 @@
 package core 
 {
-	import org.flixel.FlxU;
-	import org.flixel.FlxSave;
-	import org.flixel.FlxG;
-	import org.flixel.FlxState;
+	import flixel.system.FlxSave;
+	import flixel.util.FlxU;
+	import flixel.FlxG;
+	import flixel.FlxState;
 
 	public class FlxTest extends FlxState 
 	{

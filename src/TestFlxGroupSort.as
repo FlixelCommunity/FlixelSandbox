@@ -1,7 +1,8 @@
 package  
 {
+	import flixel.util.FlxU;
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 
 	/**
 	 * This code tests FlxGroup::sort().

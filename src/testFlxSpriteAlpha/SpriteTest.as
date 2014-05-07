@@ -2,8 +2,8 @@ package testFlxSpriteAlpha
 {
 	import flash.geom.ColorTransform;
 	import flash.display.BitmapData;
-	import org.flixel.FlxG;
-	import org.flixel.FlxSprite;
+	import flixel.FlxG;
+	import flixel.FlxSprite;
 	
 	public class SpriteTest extends FlxSprite
 	{

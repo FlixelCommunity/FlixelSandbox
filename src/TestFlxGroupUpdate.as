@@ -6,8 +6,9 @@ package
 	import testFlxGroupUpdate.FlxGroupWireframe;
 	import testFlxGroupUpdate.FlxGroupKWarp;
 	import testFlxGroupUpdate.FlxGroupAdam;
-	import org.flixel.*;
-
+	import flixel.*;
+	import flixel.ui.FlxText;
+	
 	public class TestFlxGroupUpdate extends FlxTest
 	{
 		public function TestFlxGroupUpdate()

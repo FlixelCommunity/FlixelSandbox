@@ -2,7 +2,7 @@ package
 {
 	import flash.text.AntiAliasType;
 	import flash.text.GridFitType;
-	import org.flixel.FlxText;
+	import flixel.ui.FlxText;
 
 	/**
 	 * @author andreas

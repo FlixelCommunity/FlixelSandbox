@@ -1,6 +1,6 @@
 package testFlxGroupUpdate 
 {
-	import org.flixel.FlxBasic;
+	import flixel.FlxBasic;
 	
 	public class FlxGroupAdam extends FlxGroupWireframe
 	{
