@@ -1,13 +1,16 @@
 package  
 {
+	import flixel.util.FlxPoint;
 	import core.FlxTest;
-	import org.flixel.*;
+
+	import flixel.*;
+	import flixel.ui.FlxText;
 	
 	/**
 	 * This code tests FlxText and its sometime blurry behavior.
 	 */
 	public class TestAngles extends FlxTest
-	{
+{
 		
 		override public function create():void 
 		{

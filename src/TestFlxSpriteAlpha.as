@@ -1,7 +1,8 @@
 package  
 {
+	import flixel.ui.FlxText;
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 	import testFlxSpriteAlpha.*;
 
 	public class TestFlxSpriteAlpha extends FlxTest

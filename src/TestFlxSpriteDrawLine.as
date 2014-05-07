@@ -1,7 +1,7 @@
 package  
 {
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 
 	public class TestFlxSpriteDrawLine extends FlxTest
 	{
@@ -19,7 +19,7 @@ package
 
 }
 
-import org.flixel.*;
+import flixel.*;
 
 class FlxBox extends FlxSprite
 {

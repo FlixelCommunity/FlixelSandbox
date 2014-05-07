@@ -1,8 +1,9 @@
 package  
 {
+	import flixel.ui.FlxText;
 	import flash.text.GridFitType;
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 	
 	/**
 	 * This code tests FlxText and its sometime blurry behavior.
@@ -83,9 +84,9 @@ package
 	}
 }
 
+import flixel.ui.FlxText;
 import flash.text.AntiAliasType;
 import flash.text.GridFitType;
-import org.flixel.FlxText;
 
 class TextGridFitted extends FlxText 
 {

@@ -1,7 +1,7 @@
 package testFlxGroupUpdate {
-	import org.flixel.FlxGroup;
-	import org.flixel.FlxG;
-	import org.flixel.FlxBasic;
+	import flixel.FlxGroup;
+	import flixel.FlxG;
+	import flixel.FlxBasic;
 	/**
 	 * This is an organizational class that can update and render a bunch of <code>FlxBasic</code>s.
 	 * NOTE: Although <code>FlxGroup</code> extends <code>FlxBasic</code>, it will not automatically

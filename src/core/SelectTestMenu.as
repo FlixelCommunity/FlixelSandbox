@@ -1,10 +1,10 @@
 package core 
 {
-	import org.flixel.FlxG;
-	import org.flixel.FlxU;
-	import org.flixel.FlxButton;
-	import org.flixel.FlxGroup;
-	import org.flixel.FlxState;
+	import flixel.FlxG;
+	import flixel.util.FlxU;
+	import flixel.ui.FlxButton;
+	import flixel.FlxGroup;
+	import flixel.FlxState;
 
 	public class SelectTestMenu extends FlxState 
 	{
