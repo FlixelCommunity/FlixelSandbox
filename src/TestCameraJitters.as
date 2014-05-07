@@ -1,7 +1,8 @@
 package  
 {
+	import flixel.tile.FlxTilemap;
 	import core.FlxTest;
-	import org.flixel.*;
+	import flixel.*;
 	import cameraJitters.Player;
 	
 	/**
@@ -20,7 +21,7 @@ package
 			FlxG.bgColor = 0xff336699;
 			
 			_map = new FlxTilemap();
-            _map.loadMap(new MapData, MapTiles);
+            _map.loadMap(new MapData(), MapTiles);
 			FlxG.camera.setBounds(0, 0, _map.width, _map.height, true);
 			add(_map);
 			
