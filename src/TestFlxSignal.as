@@ -9,7 +9,7 @@ package
 	import flixel.*;
 	import flixel.util.FlxSignal;
 
-	public class TestFlxSignal extDends FlxTest
+	public class TestFlxSignal extends FlxTest
 	{
 		private var mDummySignal :FlxSignal;
 		private var mButton :FlxButton;

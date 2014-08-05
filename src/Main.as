@@ -21,7 +21,7 @@ package
 			FlxTest.register(TestFlxSpriteDrawLine);
 			FlxTest.register(TestCameraJitters);
 			FlxTest.register(TestFlxRandom);
-			FlxTest.register(TestFlxDebugger);
+			//FlxTest.register(TestFlxDebugger);
 			FlxTest.register(TestFlxSignal);
 			
 			super(400, 300, SelectTestMenu, 2);
