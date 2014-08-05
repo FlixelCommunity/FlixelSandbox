@@ -2,6 +2,7 @@ package
 {	
 	import core.FlxTest;
 	import core.SelectTestMenu;
+	import flixel.FlxG;
 	import flixel.FlxGame;
 	
 	[SWF(width="800", height="600", backgroundColor="#000000")]
@@ -20,9 +21,11 @@ package
 			FlxTest.register(TestFlxSpriteDrawLine);
 			FlxTest.register(TestCameraJitters);
 			FlxTest.register(TestFlxRandom);
+			FlxTest.register(TestFlxDebugger);
+			FlxTest.register(TestFlxSignal);
 			
 			super(400, 300, SelectTestMenu, 2);
-			forceDebugger = true;
+			FlxG.debug = true;
 		}
 	}
 }
