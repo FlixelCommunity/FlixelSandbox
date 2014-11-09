@@ -31,7 +31,7 @@ package
 			mSprite = new FlxSprite();
 			add(mSprite);
 			
-			mSprite.followPath(new FlxPath([new FlxPoint(FlxG.width, 5), new FlxPoint(0, 5)]), 30, FlxObject.PATH_YOYO);
+			mSprite.followPath(new FlxPath([new FlxPoint(FlxG.width, 5), new FlxPoint(0, 5)]), 30, FlxPath.YOYO);
 			
 			mSound = new FlxSound();
 			//mSound.loadEmbedded(SoundClass, true);
